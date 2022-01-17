@@ -121,7 +121,9 @@ int TCPServer::get_last_closed_sockets()
 
 void TCPServer::clean(int id)
 {
-	Message[id] = NULL;
+	// Message[id] = NULL;
+	// 根据id擦除相应的元素比
+    	Message.erase(Message.begin() + id);
 	memset(msg, 0, MAXPACKETSIZE);
 }
 
